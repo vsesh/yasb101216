@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var events = {
+                'mouseup': '#004d66',
+                'mousemove': '#007fff'
+            };
+
+            var body = document.body;
+            Object.keys(events).forEach(function (curEvent) {
+                document.documentElement.addEventListener(curEvent, function (event) {
+                    body.style.backgroundColor = events[event.type];
+                });
+            });
+
+            setInterval(function () {
+                body.style.backgroundColor = '#85c2ff';
+            }, 600);
+
+        };
+    </script>
+    <style>
+        body {
+            background-color: #85c2ff;
+            transition: 0.2s background-color ease;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
